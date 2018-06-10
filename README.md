@@ -1,8 +1,9 @@
 # MarkdownEmojiExtension #
 
-I didn't have much time this weekend, but I wanted to write a little code for keeping my brain active. So 
-I ego-googled my website and noticed: I can't use emojis! Supporting emojis sounds like a nice little task, 
-so let's take a look how to do it.
+I didn't have much time this weekend, but I wanted to write a little code for keeping my brain 
+active. So I ego-googled my website and noticed: I can't use emojis! 
+
+Supporting emojis sounds like a nice little task, so let's take a look how to do it.
 
 You can find the final extensions on the GitHub repository at:
 
