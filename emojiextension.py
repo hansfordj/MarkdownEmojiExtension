@@ -1,36 +1,41 @@
+import io
+import json
 from markdown.extensions import Extension
 from markdown.inlinepatterns import Pattern
-
-from pkg_resources import resource_stream, resource_listdir
-
-import json
-import io
-import os
-import codecs
 
 EMOJI_RE = r'(::)(.*?)::'
 
 class EmojiExtension(Extension):
 
     def __init__(self, **kwargs):
+        self.config = {
+            'emojis': [[], 'List of Emojis.']
+        }
         super(EmojiExtension, self).__init__(**kwargs)
-                
-    def extendMarkdown(self, md, md_globals):
-        # Read the Emojis from the Resource:
-        emoji_list = json.loads(resource_stream('resources', 'emojis.json').read().decode('utf-8'))
-        # Turn the Emojis into a Dictionary for faster lookups:
-        emojis = dict((emoji['key'], emoji['value']) for emoji in emoji_list)
-        # And add the EmojiInlineProcessor to the Markdown Pipeline:
-        md.inlinePatterns.add('emoji', EmojiInlineProcessor(EMOJI_RE, emojis) ,'<not_strong')
         
-class EmojiInlineProcessor(Pattern):
+    def extendMarkdown(self, md, md_globals):
+        emojis = self._as_dictionary(self.getConfig('emojis'))
+        pattern = EmojiInlinePattern(EMOJI_RE, emojis)
+        md.inlinePatterns.add('emoji', pattern,'<not_strong')
+        
+    def _as_dictionary(self, emojis):
+        return dict((emoji['key'], emoji['value']) for emoji in emojis)
+    
+    @staticmethod
+    def create_from_json(filename):
+        with io.open(filename, encoding='utf-8') as filehandle:
+            data = json.load(filehandle)
+            return EmojiExtension(emojis=data)
+        
+class EmojiInlinePattern(Pattern):
     
     def __init__(self, pattern, emojis):
-        super(EmojiInlineProcessor, self).__init__(pattern)
-        
+        super(EmojiInlinePattern, self).__init__(pattern)
         self.emojis = emojis
         
     def handleMatch(self, m):
         emoji_key = m.group(3)
         
         return self.emojis.get(emoji_key, '')
+
+
