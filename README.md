@@ -153,7 +153,3 @@ MARKDOWN = {
 ```
 
 And that's it!
-
-## Does it work? ##
-
-I think so!
