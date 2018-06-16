@@ -51,7 +51,7 @@ There are several JSON files, with the emojis as Unicode characters:
 I turned it into a list of Key / Value Pairs, so it looks like this:
 
 ```
-{
+[
   {
     "key": "grinning_face",
     "value": "😀"
