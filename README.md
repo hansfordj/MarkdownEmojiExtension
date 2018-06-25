@@ -12,4 +12,4 @@ The original blog post for the project can be found here:
 
 [@varadgunjal](https://github.com/varadgunjal) has written a great post about using the extension with Pelican at:
 
-* https://blog.varadgunjal.com/blog-pelican-gh-pages-emoji.html
+* http://blog.varadgunjal.com/blog-pelican-gh-pages-emoji.html
