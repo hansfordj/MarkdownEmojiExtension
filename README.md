@@ -10,6 +10,6 @@ The original blog post for the project can be found here:
 
 ## Integration into Pelican ##
 
-[@varadgunjal](https://github.com/varadgunjal) has written a great post about using the extension wuth Pelican at:
+[@varadgunjal](https://github.com/varadgunjal) has written a great post about using the extension with Pelican at:
 
 * https://blog.varadgunjal.com/blog-pelican-gh-pages-emoji.html
