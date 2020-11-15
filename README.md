@@ -1,15 +1,7 @@
 # MarkdownEmojiExtension #
 
-[EmojiCodeSheet]: https://github.com/shanraisshan/EmojiCodeSheet
-
+This is a fork of bytefish's markdown emoji extension updated to integrate with Pelican 4
 Adds Emoji Support to Python Markdown, so you can write ``::grinning_face::`` to generate a 😁.
 
-The original blog post for the project can be found here:
+[EmojiCodeSheet]: https://github.com/shanraisshan/EmojiCodeSheet
 
-* https://bytefish.de/blog/markdown_emoji_extension/
-
-## Integration into Pelican ##
-
-[@varadgunjal](https://github.com/varadgunjal) has written a great post about using the extension with Pelican at:
-
-* http://blog.varadgunjal.com/blog-pelican-gh-pages-emoji.html
