@@ -39,3 +39,5 @@ class EmojiInlinePattern(Pattern):
         return self.emojis.get(emoji_key, '')
 
 
+def makeExtension(**kwargs):    # pragma: no cover
+    return EmojiExtension.create_from_json(**kwargs)
