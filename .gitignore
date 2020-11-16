@@ -1,4 +1,5 @@
 *.pyc
 build
 dist
-emojiextension.egg-info
+markdown_emojiextension.egg-info
+venv
